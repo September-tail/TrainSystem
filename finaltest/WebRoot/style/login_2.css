@@ -1,0 +1,92 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+.login {
+  border: 3px solid white;
+  color: white;
+  width: 500px;
+  height: auto;
+  background-color: white;
+  margin-top: 80px;
+  margin-left: 460px;
+  -webkit-animation-name: fadeIn; /*鍔ㄧ敾鍚嶇О*/
+  -webkit-animation-duration: 1s; /*鍔ㄧ敾鎸佺画鏃堕棿*/
+  -webkit-animation-iteration-count: 1; /*鍔ㄧ敾娆℃暟*/
+  -webkit-animation-delay: 0s; /*寤惰繜鏃堕棿*/
+}
+.box-header{
+  margin-top: 0px;
+  height: 55px;
+  line-height: 55px;
+  background-color: #2b3946;
+}
+.box-header a {
+  font-size: 17px;
+  text-decoration: none;
+  color: #cccccc;
+  margin-left: 25px;
+}
+.form-signin {
+  margin-top: 20px;
+  max-width: 330px;
+  padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 25px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.turn-square{
+	margin-top:100px;
+	width:auto;
+	height:auto;
+	border:3px solid #2b3946;
+	border-radius:5px;
+	background-color:#cccccc;
+	opacity:0.7;
+	padding:0px 240px 40px;
+	
+}
+.turn-square p{
+	font-size:20px;
+	text-align:center;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    margin-top: 130px;
+    opacity: 0; /*鍒濆鐘舵�� 閫忔槑搴︿负0*/
+  }
+  100% {
+    margin-top: 80px;
+    opacity: 1; /*缁撳熬鐘舵�� 閫忔槑搴︿负1*/
+  }
+}

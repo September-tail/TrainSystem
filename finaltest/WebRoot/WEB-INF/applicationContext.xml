@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">  
+	
+	
+<context:property-placeholder location="classpath:db.properties"/>
+
+<!-- 扫描 -->
+<context:component-scan base-package="com.dao.Impl,com.action,com.service.Impl"></context:component-scan>
+   
+<!-- 连接池 -->
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">  
+    <property name="driverClassName" value="${jdbc.driver}"></property>  
+	    <property name="url" value="${jdbc.url}"></property>  
+	    <property name="username" value="${jdbc.username}"></property>  
+	    <property name="password" value="${jdbc.password}"></property>  
+    <!-- 最大连接数 -->  
+    <property name="maxActive" value="100"></property>  
+    <!-- 最大可空闲连接数 -->  
+    <property name="maxIdle" value="30"></property>  
+    <!-- 最大等待连接 -->  
+    <property name="maxWait" value="500"></property>  
+    <!-- 事务提交，true代表自动提交事物 -->  
+    <property name="defaultAutoCommit" value="true"></property>
+    
+</bean> 
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+    <property name="dataSource" ref="dataSource"></property>  
+    <property name="hibernateProperties">  
+        <props>  
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+            <prop key="hibernate.show_sql">true</prop>  
+        </props>  
+    </property>  
+    <property name="mappingResources">  
+        <list>  
+            <value>com/model/Admin.hbm.xml</value>  
+            <value>com/model/Train.hbm.xml</value>
+            <value>com/model/Pass.hbm.xml</value>
+        </list>  
+    </property>  
+</bean>  
+<!-- DAO bean -->
+<bean id="AdminDAO" class="com.dao.Impl.AdminDAOImpl" scope="prototype">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+<bean id="TrainDAO" class="com.dao.Impl.TrainDAOImpl" scope="prototype">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+<bean id="PassDAO" class="com.dao.Impl.PassDAOImpl" scope="prototype">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+
+<!-- Service bean -->
+<bean id="AdminService" class="com.service.Impl.AdminServiceImpl" >
+	<property name="adminDAO" ref="AdminDAO"></property>
+</bean>
+<bean id="TrainService" class="com.service.Impl.TrainServiceImpl">
+	<property name="traindao" ref="TrainDAO"></property>
+</bean>
+<bean id="PassService" class="com.service.Impl.PassServiceImpl">
+	<property name="passdao" ref="PassDAO"></property>
+</bean>
+
+<!-- Action bean -->
+<bean id="RegistAction" class="com.action.RegistAction" scope="prototype">
+	<property name="adminservice" ref="AdminService"></property>
+</bean>
+
+<bean id="LoginAction" class="com.action.LoginAction" scope="prototype">
+	<property name="adminservice" ref="AdminService"></property>
+</bean>
+
+<bean id="AddTrainAction" class="com.action.AddTrainAction" scope="prototype">
+	<property name="trainservice" ref="TrainService"></property>
+</bean>
+
+<bean id="DeleteTrainAction" class="com.action.DeleteTrainAction" scope="prototype">
+	<property name="trainservice" ref="TrainService"></property>
+</bean>
+
+<bean id="ShowTrainAction" class="com.action.ShowTrainAction" scope="prototype">
+	<property name="trainservice" ref="TrainService"></property>
+</bean>
+
+<bean id="UpdatePTrainAction" class="com.action.UpdatePTrain">
+    <property name="trainservice" ref="TrainService"></property>
+</bean>
+
+<bean id="UpdateTrainAction" class="com.action.UpdateTrainAction" scope="prototype">
+    <property name="trainservice" ref="TrainService"></property>
+</bean>
+
+<bean id="ShowByStationAction" class="com.action.ShowByStationAction" scope="prototype">
+	<property name="trainservice" ref="TrainService"></property>
+</bean>
+
+<bean id="AddPassAction" class="com.action.AddPassAction" scope="prototype">
+	<property name="pass_service" ref="PassService"></property>
+</bean>
+
+<bean id="ShowPassAction" class="com.action.ShowPassAction" scope="prototype">
+	<property name="pass_service" ref="PassService"></property>
+</bean>
+
+<bean id="DeletePassAction" class="com.action.DeletePassAction" scope="prototype">
+	<property name="pass_service" ref="PassService"></property>
+</bean>
+
+<bean id="ShowPassByNumber" class="com.action.ShowPassByNumber" scope="prototype">
+	<property name="pass_service" ref="PassService"></property>
+</bean>
+
+<bean id="UpdatePPass" class="com.action.UpdatePPass" scope="prototype">
+	<property name="pass_service" ref="PassService"></property>
+</bean>
+
+<bean id="UpdatePassAction" class="com.action.UpdatePassAction">
+	<property name="pass_service" ref="PassService"></property>
+</bean>
+</beans>

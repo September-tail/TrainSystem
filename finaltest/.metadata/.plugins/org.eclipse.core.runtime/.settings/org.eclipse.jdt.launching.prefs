@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="52,org.eclipse.jdt.internal.launching.macosx.MacOSXType13,1521428193439" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="com.sun.java.jdk8.macosx.x86_64_1.8.0.v112" name\="Java JDK VM 1.8.0_v112 OSX" path\="/Applications/MyEclipse 2017 CI/MyEclipse 2017 CI.app/Contents/Profile/binary/com.sun.java.jdk8.macosx.x86_64_1.8.0.v112"/>\n</vmType>\n</vmSettings>\n

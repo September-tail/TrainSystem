@@ -1,0 +1,60 @@
+.add-train-form{
+    position: absolute;
+    top: 80px;
+    left:200px;
+}
+.update-table{
+    padding-left: 0px;
+    height: 450px;
+    width: 800px;
+    margin-left: 210px;
+    margin-top: 40px;
+    position: absolute;
+    color: black;
+    background-color:white;
+    border-top: 1px solid #2b3946;
+    border-left: 1px solid #2b3946;
+    border-right: 1px solid #2b3946;
+    border-bottom: 1px solid #2b3946;
+    cursor: pointer;
+}
+.content{
+    text-align: center;
+    color:white;
+    background-color: #2b3946;
+}
+.content-gray{
+    background-color: #cccccc;
+    color: #000;
+
+}
+.button {
+    width: 200px;
+    height: 40px;
+    background-color: #2b3946;
+    border: 1px solid #2b3946;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: normal;
+    border-radius: 5px;
+    margin-top:530px;
+    margin-left: 500px;
+
+}
+label{
+    margin-left: 30px;
+}
+.input {
+    width: 150px;
+    height: 10px;
+    margin-bottom: 1px;
+    outline: none;
+    padding: 13px;
+    color: #0c0408;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-top: 1px solid #2b3946;
+    border-left: 1px solid #2b3946;
+    border-right: 1px solid #2b3946;
+    border-bottom: 1px solid #2b3946;
+}

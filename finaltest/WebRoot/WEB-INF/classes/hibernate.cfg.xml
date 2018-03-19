@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+<session-factory>
+	<property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">iloveu</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">
+    	jdbc:mysql://localhost:3306/train?useUnicode=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true
+    </property>
+	<property name="hbm2ddl.auto">update</property>
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<property name="show_sql">true</property>
+	<!-- <list>  
+	            <value>com/model/Admin.hbm.xml</value>  
+	            <value>com/model/Train.hbm.xml</value>
+	            <value>com/model/Pass.hbm.xml</value>
+	        </list> -->
+	<mapping resource="com/model/Pass.hbm.xml"/>
+	<mapping resource="com/model/Admin.hbm.xml"/>
+	<mapping resource="com/model/Train.hbm.xml"/>
+	<mapping resource="com/model/MiddlePass.hbm.xml"/>
+</session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="com.model.MiddlePass" table="station">
+	<id name="id" type="java.lang.Integer" column="id">
+		<generator class="increment"></generator>
+	</id>
+	<property name="train_number" type="string" column="train_number"></property>
+	<property name="train_station" type="string" column="train_station"></property>
+	<property name="train_length" type="java.lang.Integer" column="train_length"></property>
+	<property name="start_time" type="java.lang.Integer" column="start_time"></property>
+	<property name="end_time" type="java.lang.Integer" column="end_time"></property>
+</class>
+</hibernate-mapping>

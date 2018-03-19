@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//WebRoot/addpass.jsp=UTF-8
+encoding//WebRoot/addtrain.jsp=UTF-8
+encoding//WebRoot/changepass.jsp=UTF-8
+encoding//WebRoot/search-by-number.jsp=UTF-8
+encoding//WebRoot/style/admin-user.css=UTF-8
+encoding//WebRoot/style/login_2.css=UTF-8
+encoding//WebRoot/update-page.jsp=UTF-8
+encoding//src/com/action/StationAction.java=UTF-8
+encoding//src/com/dao/Impl/IPassDAOImpl.java=UTF-8
+encoding//src/com/model/Pass.java=UTF-8
+encoding//src/com/service/Impl/IPassServiceImpl.java=UTF-8

@@ -1,0 +1,212 @@
+/*user-search*/
+.search-box {
+    border: 3px solid white;
+    width: 600px;
+    height: 300px;
+    background-color: white;
+    margin-top: 80px;
+    margin-left:400px;
+    -webkit-animation-name: fadeIn; /*鍔ㄧ敾鍚嶇О*/
+    -webkit-animation-duration: 1s; /*鍔ㄧ敾鎸佺画鏃堕棿*/
+    -webkit-animation-iteration-count: 1; /*鍔ㄧ敾娆℃暟*/
+    -webkit-animation-delay: 0s; /*寤惰繜鏃堕棿*/
+}
+.box-header{
+    margin-top: 0px;
+    height: 55px;
+    line-height:55px;
+    background-color: #2b3946;
+}
+.box-header span{
+    margin-left: 25px;
+}
+.box-header a{
+    font-size: 17px;
+    text-decoration : none;
+    color: #cccccc;
+}
+.box-header a:hover{
+    color: white;
+}
+.search-part .start{
+    margin-left: 25px;
+    margin-top: 35px;
+}
+.search-part .end{
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.search-part .station{
+    width:180px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 1px;
+    border-top: 1px solid #2b3946;
+    border-left: 1px solid #2b3946;
+    border-right: 1px solid #2b3946;
+    border-bottom: 1px solid #2b3946;
+}
+.form1 .search-date {
+    position: relative;
+    top: -80px;
+    left: 315px;
+}
+.form2 .search-date {
+    position: relative;
+    top: -52px;
+    left: 315px;
+}
+input{
+    width:150px;
+    height: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    outline: none;
+    padding: 10px;
+    font-size: 10px;
+    color: #0c0408;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border-top: 1px solid #2b3946;
+    border-left: 1px solid #2b3946;
+    border-right: 1px solid #2b3946;
+    border-bottom: 1px solid #2b3946;
+}
+.form1 button{
+     width: 140px;
+     height: 40px;
+     background-color: #2b3946;
+     border: 1px solid #2b3946;
+     color: #ffffff;
+     font-size: 17px;
+     line-height: normal;
+     border-radius: 3px;
+     margin-left: 430px;
+ }
+.form2 button{
+    width: 140px;
+    height: 40px;
+    background-color: #2b3946;
+    border: 1px solid #2b3946;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: normal;
+    border-radius: 3px;
+    margin-left: 430px;
+    margin-top: 28px;
+}
+.search-box .button a{
+    font-size: 17px;
+    text-decoration : none;
+    color: #fbfbfb;
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        margin-top: 130px;
+        opacity: 0; /*鍒濆鐘舵�� 閫忔槑搴︿负0*/
+    }
+    100% {
+        margin-top: 80px;
+        opacity: 1; /*缁撳熬鐘舵�� 閫忔槑搴︿负1*/
+    }
+}
+
+
+/* search-result*/
+.search-bar{
+    margin-top: 0px;
+    width: 100%;
+    height: 55px;
+    line-height:55px;
+    background-color: #2b3946;
+    color: white;
+}
+.search-bar .train-no {
+    margin-left: 60px;
+    display: inline;
+}
+.search-bar .start {
+    margin-left: 30px;
+    display: inline;
+}
+.search-bar .end {
+    margin-left: 30px;
+    display: inline;
+}
+.search-bar .search-date{
+    margin-left: 30px;
+    display: inline;
+}
+.search-bar .button {
+    width: 100px;
+    height: 35px;
+    background-color: #eaeaea;
+    border: 1px solid #66686c;
+    color: #082636;
+    font-size: 15px;
+    line-height: normal;
+    border-radius: 3px;
+    margin-left: 60px;
+}
+.search-bar .station{
+    width:180px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 1px;
+    border-top: 1px solid #2b3946;
+    border-left: 1px solid #2b3946;
+    border-right: 1px solid #2b3946;
+    border-bottom: 1px solid #2b3946;
+}
+.result-table {
+    width: 100%;
+    border: 0;
+}
+.result-table .content{
+    /*background-color: #2b3946;*/
+    /*color: white;*/
+    height: 50px;
+    text-align: center;
+}
+.select {
+    width:150px;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    color: #0c0408;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border-top: 1px solid #2b3946;
+    border-left: 1px solid #2b3946;
+    border-right: 1px solid #2b3946;
+    border-bottom: 1px solid #2b3946;
+}
+/*琛ㄦ牸鑳屾櫙閫忔槑*/
+table {
+    background-color: transparent;
+}
+table{border-collapse:collapse;}/* 杈规浼氬悎骞朵负涓�涓崟涓�鐨勮竟妗� */
+table,td,th{border:none;}/* 鍘绘帀杈规绾� */
+th {
+    text-align: center;
+}
+/*琛ㄦ牸瀹藉害璺熺埗鍏冪礌涓�鏍�*/
+.table {
+    border-bottom: thin dotted #a9a9a9;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+/*鏉＄汗鐘惰〃鏍�*/
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #e9e9e9;
+}
+.table-hover > tbody > tr:hover {
+    background-color: #f8f8f8;
+}
+.table tr {
+    height: 50px;
+}

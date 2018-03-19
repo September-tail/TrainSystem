@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">  
+<struts>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<package name="admin" extends="struts-default">  
+		<!-- class="RegistAction"与applicationContext.xml中的id对应 -->
+		<action name="regist" class="RegistAction">  
+            <result>/login.jsp</result>  
+        </action>
+        
+        <action name="login" class="LoginAction">
+        	<result name="success" type="redirect">/showaction.action</result>
+        	<result name="input">/input.jsp</result>
+        </action>
+        
+        <action name="userlogin" class="LoginAction">
+        	<result name="success">/querystation.jsp</result>
+        </action>
+        
+        <action name="addtrain" class="AddTrainAction">
+        	<result name="success" type="redirect">/showaction.action</result>
+        </action>
+        
+        <action name="deletetrain" class="DeleteTrainAction">
+        	<result name="success" type="redirect">/showaction.action</result>
+        	<result name="input">/input.jsp</result>
+        </action>
+        
+        <action name="showaction" class="ShowTrainAction">
+        	<result name="success">/update-page.jsp</result>
+        </action>
+        
+        <action name="updatePTrain" class="UpdatePTrainAction">
+            <result name="success">/updateTrain.jsp</result>
+        </action>
+        
+        <action name="updatetrain" class="UpdateTrainAction">
+            <result name="success" type="redirect">showaction.action</result>
+        </action>
+        
+        <action name="showbystation" class="ShowByStationAction">
+        	<result name="success">/update-page.jsp</result>
+        </action>
+        
+        <action name="addpass" class="AddPassAction">
+        	<result name="success" type="redirect">showpasses.action</result>
+        </action>
+        
+        <action name="showpasses" class="ShowPassAction">
+        	<result name="success">/showPasses.jsp</result>
+        </action>
+        
+        <action name="deletepass" class="DeletePassAction">
+        	<result name="success" type="redirect">showpasses.action</result>
+        	<result name="input">/input.jsp</result>
+        </action>
+        
+        <action name="updatePPass" class="UpdatePPass">
+        	<result name="success">/updatePass.jsp</result>
+        </action>
+        
+        <action name="updatepass" class="UpdatePassAction">
+        	<result name="success" type="redirect">showpasses.action</result>
+        </action>
+        <action name="showpassbynumber" class="ShowPassByNumber">
+        	<result name="success">/showPasses.jsp</result>
+        </action>
+        <action name="usershowbynumber" class="ShowPassByNumber">
+        	<result name="success">/search-by-number.jsp</result>
+        </action>
+	</package>
+	
+	<package name="stationPack" extends="struts-default" namespace="/">
+		<action name="station_*" class="com.action.StationAction" method="{1}">
+			<result name="success">/search-result.jsp</result>
+			<result name="query" type="redirect">station_query</result>
+			<result name="queryByNumber" type="redirect">station_queryByNumber</result>
+			<result name="detail">/train-detail.jsp</result>
+			<result name="changepass">/changepass.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+	</package>
+</struts>
